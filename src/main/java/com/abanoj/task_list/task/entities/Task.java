@@ -1,4 +1,4 @@
-package com.abanoj.task_list.task;
+package com.abanoj.task_list.task.entities;
 
 import com.abanoj.task_list.tasklist.TaskList;
 import jakarta.persistence.*;
@@ -15,6 +15,7 @@ import java.time.LocalDateTime;
 public class Task {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(updatable = false, nullable = false)
     private Long id;
     @Column(nullable = false)
     private String title;

@@ -1,6 +1,6 @@
 package com.abanoj.task_list.tasklist;
 
-import com.abanoj.task_list.task.Task;
+import com.abanoj.task_list.task.entities.Task;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -16,6 +16,7 @@ import java.util.List;
 public class TaskList {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(updatable = false, nullable = false)
     private Long id;
     @Column(nullable = false)
     private String title;
