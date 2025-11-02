@@ -10,8 +10,8 @@ import java.time.ZonedDateTime;
 @ControllerAdvice
 public class GlobalExceptionHandler {
 
-    @ExceptionHandler
-    public ResponseEntity<ErrorResponse> handleExceptions(Exception ex){
+    @ExceptionHandler(exception = IllegalArgumentException.class)
+    public ResponseEntity<ErrorResponse> handleExceptions(RuntimeException ex){
         ErrorResponse errorResponse = new ErrorResponse(
                 HttpStatus.BAD_REQUEST.value(),
                 ex.getMessage(),
