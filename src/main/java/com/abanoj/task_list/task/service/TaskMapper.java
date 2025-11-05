@@ -5,8 +5,8 @@ import com.abanoj.task_list.task.entities.TaskDto;
 import org.springframework.stereotype.Component;
 
 @Component
-public class TaskMappers {
-    public TaskDto toDto(Task task){
+public class TaskMapper {
+    public TaskDto toDto(Task task) {
         return new TaskDto(
                 task.getId(),
                 task.getTitle(),
@@ -15,7 +15,7 @@ public class TaskMappers {
         );
     }
 
-    public Task toTask(TaskDto taskDto){
+    public Task toTask(TaskDto taskDto) {
         return new Task(
                 taskDto.id(),
                 taskDto.title(),
